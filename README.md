@@ -39,8 +39,8 @@ ai_human_detection_project/
 1. **Clone the repo**:
 
    ```bash
-   git clone https://github.com/your-username/ai-hvs-detection.git
-   cd ai-hvs-detection
+   git clone https://github.com/kwesi-danso/ai_human_detection_project.git
+   
 
    ```
 
