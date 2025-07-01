@@ -10,7 +10,6 @@ python-docx
 nltk==3.8.1
 openpyxl
 torch
-tensorflow
 torchvision
 wordcloud
 
