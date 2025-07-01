@@ -1,0 +1,16 @@
+streamlit
+scikit-learn
+pandas
+numpy
+joblib
+matplotlib
+seaborn
+PyPDF2
+python-docx
+nltk==3.8.1
+openpyxl
+torch
+tensorflow
+torchvision
+wordcloud
+
