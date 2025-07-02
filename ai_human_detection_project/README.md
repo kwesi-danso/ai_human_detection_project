@@ -44,7 +44,7 @@ ai_human_detection_project/
 
 ## 🛠 Installation 1(hosted and deployed Setup)
 
-The app is deployed and availabe at: https://ai-human.streamlit.app/
+The app is deployed and availabe at: https://ai-human-detection-update.streamlit.app
 
 ## 🛠 Installation 2(Local Setup)
 
