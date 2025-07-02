@@ -18,6 +18,14 @@ import sklearn
 from PyPDF2 import PdfReader
 
 
+# Always point at the folder containing this script
+BASE_DIR  = os.path.dirname(os.path.abspath(__file__))
+MODEL_DIR = os.path.join(BASE_DIR, "models")
+
+# Build correct paths to your artifacts
+VOCAB_PATH = os.path.join(MODEL_DIR, "vocab.pkl")
+EMB_PATH   = os.path.join(MODEL_DIR, "emb_matrix.npy")
+
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 
@@ -41,8 +49,10 @@ def encode(text: str, vocab: dict, max_len: int = 239):
 
 
 try:
-    VOCAB_PATH = os.path.join("models", "vocab.pkl")
-    EMB_PATH = os.path.join("models", "emb_matrix.npy")
+    VOCAB_PATH = os.path.join(MODEL_DIR, "vocab.pkl")
+    EMB_PATH   = os.path.join(MODEL_DIR, "emb_matrix.npy")
+    # VOCAB_PATH = os.path.join("models", "vocab.pkl")
+    # EMB_PATH = os.path.join("models", "emb_matrix.npy")
 
     with open(VOCAB_PATH, "rb") as f:
         vocab = pickle.load(f)
