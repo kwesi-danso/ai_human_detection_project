@@ -229,7 +229,7 @@ def load_models():
     models = {}
 
     # 0 ▸ TF-IDF vectorizer (for classical models)
-    vec_path = os.path.join("models", "tfidf_vectorizer.pkl")
+    vec_path = os.path.join(MODEL_DIR, "tfidf_vectorizer.pkl")
     if os.path.exists(vec_path):
         models["vectorizer"] = joblib.load(vec_path)
         models["vectorizer_available"] = True
@@ -238,9 +238,9 @@ def load_models():
 
     # 1 ▸ vocabulary  +  embedding matrix  (for DL models)
     try:
-        with open(os.path.join("models", "vocab.pkl"), "rb") as f:
+        with open(os.path.join(MODEL_DIR, "vocab.pkl"), "rb") as f:
             vocab = pickle.load(f)
-        emb_matrix = np.load(os.path.join("models", "emb_matrix.npy"))
+        emb_matrix = np.load(os.path.join(MODEL_DIR, "emb_matrix.npy"))
         models["vocab"] = vocab
     except FileNotFoundError as e:
         st.error(
@@ -256,7 +256,7 @@ def load_models():
     }
     for key, fname in classical_files.items():
         try:
-            models[key] = joblib.load(os.path.join("models", fname))
+            models[key] = joblib.load(os.path.join(MODEL_DIR, fname))
             models[f"{key}_available"] = True
         except FileNotFoundError:
             models[f"{key}_available"] = False
