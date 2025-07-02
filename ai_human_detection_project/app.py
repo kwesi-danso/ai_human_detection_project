@@ -269,7 +269,7 @@ def load_models():
     }
 
     for key, (cls, extra) in dl_specs.items():
-        pkl_path = os.path.join("models", f"{key}_model.pkl")
+        pkl_path = os.path.join(MODEL_DIR, f"{key}_model.pkl")
         if not os.path.exists(pkl_path) or vocab is None:
             models[f"{key}_available"] = False
             continue
